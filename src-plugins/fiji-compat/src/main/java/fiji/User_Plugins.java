@@ -5,6 +5,7 @@ import ij.ImageJ;
 import ij.Menus;
 
 import ij.plugin.PlugIn;
+import imagej.legacy.SwitchToModernMode;
 
 import java.awt.Menu;
 import java.awt.MenuBar;
@@ -106,6 +107,9 @@ public class User_Plugins implements PlugIn {
 
 		installScripts();
 		installPlugins(path, "", menuPath);
+
+		SwitchToModernMode.registerMenuItem();
+
 		if (IJ.getInstance() != null) {
 			Menu help = Menus.getMenuBar().getHelpMenu();
 			for (int i = help.getItemCount() - 1; i >= 0; i--) {
